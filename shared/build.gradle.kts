@@ -16,7 +16,7 @@ kotlin {
             }
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -30,8 +30,8 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.runtime)
-            implementation(libs.coroutines.extensions.v210)
+            implementation(libs.sqldelight.runtime)
+            implementation(libs.sqldelight.coroutines)
             implementation(libs.kotlinx.coroutines)
             implementation(libs.koin.core)
         }
@@ -39,13 +39,12 @@ kotlin {
             implementation(libs.kotlin.test)
         }
         androidMain.dependencies {
-            implementation(libs.sqldelight.android)
-            implementation(libs.android.driver.v210)
             implementation(libs.koin.android)
             implementation(libs.lifecycle.viewmodel.compose)
+            implementation(libs.sqldelight.android.driver)
         }
         iosMain.dependencies {
-            implementation(libs.sqldelight.native)
+            implementation(libs.sqldelight.native.driver)
         }
     }
 }
@@ -59,5 +58,13 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+sqldelight {
+    databases {
+        create("FlashcardDatabase") {
+            packageName.set("com.example.flashcard")
+        }
     }
 }

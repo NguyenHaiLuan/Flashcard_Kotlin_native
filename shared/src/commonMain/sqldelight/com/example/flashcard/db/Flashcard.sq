@@ -1,0 +1,26 @@
+CREATE TABLE Flashcard (
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    question TEXT NOT NULL,
+    answer TEXT NOT NULL,
+    isLearned INTEGER NOT NULL DEFAULT 0
+);
+
+selectAll:
+SELECT * FROM Flashcard;
+
+findById:
+SELECT * FROM Flashcard
+WHERE id = ?;
+
+insertFlashcard:
+INSERT INTO Flashcard(question, answer, isLearned)
+VALUES (?, ?, ?);
+
+updateFlashcard:
+UPDATE Flashcard
+SET question = ?, answer = ?, isLearned = ?
+WHERE id = ?;
+
+deleteFlashcard:
+DELETE FROM Flashcard
+WHERE id = ?;
