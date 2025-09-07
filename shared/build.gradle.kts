@@ -30,8 +30,8 @@ kotlin {
 
     sourceSets {
         commonMain.dependencies {
-            implementation(libs.sqldelight.runtime)
-            implementation(libs.sqldelight.coroutines)
+            implementation(libs.runtime)
+            implementation(libs.coroutines.extensions.v210)
             implementation(libs.kotlinx.coroutines)
             implementation(libs.koin.core)
         }
@@ -40,6 +40,7 @@ kotlin {
         }
         androidMain.dependencies {
             implementation(libs.sqldelight.android)
+            implementation(libs.android.driver.v210)
             implementation(libs.koin.android)
             implementation(libs.lifecycle.viewmodel.compose)
         }
