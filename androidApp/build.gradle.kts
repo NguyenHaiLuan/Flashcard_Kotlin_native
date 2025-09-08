@@ -43,5 +43,7 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
     implementation(libs.compose.navigation)
+    implementation(libs.androidx.runtime.livedata)
+    implementation(libs.compose.livedata)
     debugImplementation(libs.compose.ui.tooling)
 }

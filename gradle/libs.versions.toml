@@ -11,6 +11,7 @@ lifecycle = "2.9.3"
 compose-navigation = "2.9.3"
 runtimeAndroid = "1.9.0"
 lifecycleViewmodelAndroid = "2.9.3"
+runtimeLivedata = "1.9.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -33,6 +34,9 @@ compose-navigation = { module = "androidx.navigation:navigation-compose", versio
 androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
 androidx-lifecycle-viewmodel-android = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-android", version.ref = "lifecycleViewmodelAndroid" }
 lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "runtimeLivedata" }
+compose-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "compose" }
+
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
