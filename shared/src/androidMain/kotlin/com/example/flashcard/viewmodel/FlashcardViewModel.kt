@@ -1,21 +1,24 @@
 package com.example.flashcard.viewmodel
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.flashcard.model.Flashcard
 import com.example.flashcard.repository.FlashcardRepository
 
 class FlashcardViewModel(
     private val repository: FlashcardRepository
-) {
-    private val _flashcards = mutableListOf<Flashcard>()
-    val flashcards: List<Flashcard> get() = _flashcards.toList()
+) : ViewModel() {
+
+    private val _flashcards = MutableLiveData<List<Flashcard>>(emptyList())
+    val flashcards: LiveData<List<Flashcard>> = _flashcards
 
     init {
         loadFlashcards()
     }
 
     private fun loadFlashcards() {
-        _flashcards.clear()
-        _flashcards.addAll(repository.getAllFlashcards())
+        _flashcards.value = repository.getAllFlashcards()
     }
 
     fun addFlashcard(question: String, answer: String, isLearned: Boolean) {
