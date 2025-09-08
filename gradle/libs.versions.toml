@@ -9,6 +9,8 @@ coroutines = "1.6.4"
 koin = "4.0.0"
 lifecycle = "2.9.3"
 compose-navigation = "2.9.3"
+runtimeAndroid = "1.9.0"
+lifecycleViewmodelAndroid = "2.9.3"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -28,6 +30,9 @@ koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "compose-navigation" }
+androidx-runtime-android = { group = "androidx.compose.runtime", name = "runtime-android", version.ref = "runtimeAndroid" }
+androidx-lifecycle-viewmodel-android = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-android", version.ref = "lifecycleViewmodelAndroid" }
+lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

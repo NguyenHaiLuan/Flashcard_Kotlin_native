@@ -41,6 +41,7 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.koin.android)
             implementation(libs.lifecycle.viewmodel.compose)
+            implementation(libs.lifecycle.viewmodel.ktx)
             implementation(libs.sqldelight.android.driver)
         }
         iosMain.dependencies {
@@ -59,6 +60,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+dependencies {
+    implementation(libs.androidx.runtime.android)
+    implementation(libs.androidx.lifecycle.viewmodel.android)
 }
 
 sqldelight {
