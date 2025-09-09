@@ -3,7 +3,9 @@ package com.example.flashcard.android.screen
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -40,18 +42,31 @@ fun AddFlashcardScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            Button(onClick = { onBack() }) {
-                Text("Quay lại")
-            }
-            Button(
-                onClick = {
-                    if (question.isNotBlank() && answer.isNotBlank()) {
-                        onAddFlashcard(question, answer)
-                    }
+        Box (
+            Modifier.width(IntrinsicSize.Max)
+                .align(Alignment.CenterHorizontally)
+        ) {
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                Button(
+                    onClick = { onBack() },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFF990000)
+                    )
+                ) {
+                    Text("Quay lại")
                 }
-            ) {
-                Text("Thêm")
+                Button(
+                    onClick = {
+                        if (question.isNotBlank() && answer.isNotBlank()) {
+                            onAddFlashcard(question, answer)
+                        }
+                    },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = Color(0xFF009900)
+                    )
+                ) {
+                    Text("Thêm")
+                }
             }
         }
     }

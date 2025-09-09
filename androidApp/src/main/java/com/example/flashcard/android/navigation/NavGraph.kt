@@ -34,7 +34,12 @@ fun NavGraph(viewModel: FlashcardViewModel) {
             FlashcardDetailScreen(
                 id = id,
                 viewModel = viewModel,
-                onBack = { navController.popBackStack() }
+                onBack = { navController.popBackStack() },
+                onNavigateToDetail = { nextId ->
+                    navController.navigate("detail/$nextId") {
+                        popUpTo("detail/$id") { inclusive = true }
+                    }
+                }
             )
         }
     }
